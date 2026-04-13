@@ -13,7 +13,6 @@ class TaskModel {
   final double estimatedEffortHours;
   final String energyLevel;
 
-
   TaskModel ({
     required this.id,
     required this.title,
@@ -25,25 +24,17 @@ class TaskModel {
     required this.importance,
     required this.estimatedEffortHours,
     required this.energyLevel,
-
   });
-
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'title': title,
-      'category': category,
-      'date': date.toIso8601String().split('T').first,
+      'id' : id, 'title' : title, 'category' : category,
+      'date' : date.toIso8601String().split('T').first,
       'startTime': '\${startTime.hour}:\${startTime.minute}',
       'endTime': '\${startTime.hour}:\${startTime.minute}',
-      'urgency': urgency,
-      'importance': importance,
-      'estimatedEffortHours': estimatedEffortHours,
-      'energyLevel': energyLevel,
+      'urgency': urgency, 'importance': importance,
+      'estimatedEffortHours': estimatedEffortHours, 'energyLevel': energyLevel,
     };
   }
-
-
 
 }

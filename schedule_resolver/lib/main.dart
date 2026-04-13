@@ -5,18 +5,18 @@ import 'providers/schedule_provider.dart';
 import 'services/ai_schedule_service.dart';
 import 'screens/dashboard_screen.dart';
 
-void main() {
+
+void main () {
   runApp(
     MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => ScheduleProvider()),
-          ChangeNotifierProvider(create: (_) => AiScheduleService()),
-        ],
+      providers: [
+        ChangeNotifierProvider(create: (_) => ScheduleProvider()),
+        ChangeNotifierProvider(create: (_) => AiScheduleService()),
+      ],
       child: const ScheduleResolverApp(),
     ),
   );
 }
-
 
 class ScheduleResolverApp extends StatelessWidget {
   const ScheduleResolverApp({super.key});
@@ -29,9 +29,8 @@ class ScheduleResolverApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
-    ),
-    home: const DashboardScreen()
+      ),
+      home: const DashboardScreen(),
     );
   }
-
 }
